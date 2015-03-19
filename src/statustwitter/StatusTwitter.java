@@ -21,15 +21,16 @@ public class StatusTwitter {
      */
     public static void main(String[] args) throws TwitterException {
         
-        ConfigurationBuilder cb = new ConfigurationBuilder();
+        ConfigurationBuilder cbuilder = new ConfigurationBuilder();
      
-        Twitter appTwitter = new TwitterFactory().getInstance();
+        Twitter twitter = new TwitterFactory().getInstance();
  
         Query query = new Query("#Cangas");
-        QueryResult result = appTwitter.search(query);
+        QueryResult result = twitter.search(query);
         for (Status status : result.getTweets()) {
             System.out.println("@" + status.getUser().getScreenName() + ":" + status.getText());
         }
         //ya tengo la rama creada
+        //segundo intento
     }
 }
